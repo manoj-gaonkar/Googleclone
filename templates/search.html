@@ -1,6 +1,14 @@
+ 
  {% for res in results %}
  <div>
-    <a href="{{ res.url }}" class='max-w-[10ch]'>{{ res.title }}</a>
+    <a href="{{ res.res_url }}" class='max-w-[10ch]'>{{ res.res_title }}</a>
     <p> {{ res.res_desc }} </p>
  </div>
+ {% endfor %}
+ 
+ <b class='text-red-800'>holdon</b>
+ {% for rel in related_results %}
+    <a href=" {{ re.rel_url }} " class='text-red-800'> {{ rel.rel_title }} </a>
+
+ 
  {% endfor %}
