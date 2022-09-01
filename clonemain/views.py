@@ -25,20 +25,21 @@ def search(request):
             res_url = result.find('a').get('href')
             res_desc = result.find(class_ = 'PartialSearchResults-item-abstract').text
             results.append({'res_title':res_title, 'res_url': res_url, 'res_desc': res_desc})
-
-        for result in related_list:
-            rel_title = result.find('a').find(class_ = 'PartialRelatedSearch-item-link-text').text
-            rel_url = result.find('a').get('href')
+        print(len(related_list))
+        for resu in related_list[:10]:
+            rel_title = resu.find('a').find(class_ = 'PartialRelatedSearch-item-link-text').text
+            rel_url = resu.find('a').get('href')
             related_results.append({'rel_title':rel_title, 'rel_url':rel_url , 'ok':"die"})
 
-        for result in recommend_list:
-            rec_title = result.find('a').find('span')
-            rec_url = result.find('a').get('href')
+        for res in recommend_list:
+            rec_title = res.find('a').find('span')
+            rec_url = res.find('a').get('href')
 
             recommend_list.append({'rec_title':rec_title,'rec_url':rec_url})
         context = {
             'results':results,
             'related_results': related_results,
+            'search': search,
         }
         return render(request,'search.html',context)
     else:
