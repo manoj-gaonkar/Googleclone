@@ -33,11 +33,17 @@
       <div class="g my-3 w-[45rem]">
         <!-- recommendation section -->
         <div class="grid w-full grid-cols-2 grid-rows-5 mt-6">
-            {% for rel in related_results %}
-          <div class="h-7 w-full  px-3 ">
-            <a href=" {{ rel.rel_url }} " class=' text-[#1a0da1] underline '>{{ rel.rel_title }}</a>
-          </div>
-          {% endfor %}
+          {% for rel in related_results %}
+          <form action="search" method="POST">
+            {% csrf_token %}
+          <input type="text" name="search" class="h-full w-full bg-transparent p-2 outline-none hidden"  value= " {{ rel.rel_title }} "/>
+
+          <button class="h-4 w-full   text-left" type='submit'>
+              <p class=' text-[#1a0da1] underline'>{{ rel.rel_title }}</p>
+              {% comment %} <a href=" {{ rel.rel_url }} " class=' text-[#1a0da1] underline '>{{ rel.rel_title }}</a> {% endcomment %}
+            </button>
+          </form>
+            {% endfor %}
         </div>
         <!-- recommendation ends here -->
         <!-- actual content -->
