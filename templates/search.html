@@ -5,10 +5,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href=" {% static 'css/style.css' %} " />
     <script src=" {% static 'js/script.js' %} "></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+      .full-font{
+        font-family: 'Open Sans', sans-serif;
+      }
+    </style>
 
 </head>
 
- <div>
+ <div class="full-font">
   <div class="flex p-6">
     <a href=" {% url 'home' %} ">
     <h1 class="mr-12 text-2xl font-medium">Google</h1>
@@ -30,7 +36,7 @@
         <div class="absolute bottom-0 left-0 w-screen border-b-2 border-gray-200"></div>
       </div>
       <!-- searched content here  -->
-      <div class="g my-3 w-[45rem]">
+      <div class="g my-2 w-[45rem]">
         <!-- recommendation section -->
         <div class="grid w-full grid-cols-2 grid-rows-5 mt-6">
           {% for rel in related_results %}
@@ -47,7 +53,7 @@
         </div>
         <!-- recommendation ends here -->
         <!-- actual content -->
-        <div class="my-4 h-fit">
+        <div class="mb-4  h-fit">
           <!-- single palette for each res -->
           {% for res in results %}
           <div class="w-full  my-6">

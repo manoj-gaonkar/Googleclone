@@ -6,6 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href=" {% static 'css/style.css' %} " />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src=" {% static 'js/script.js' %} "></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,13 +20,17 @@
           <span class="inline w-fit text-[#0086f8]">G</span><span class="inline w-fit text-[#ff4131]">o</span><span class="inline w-fit text-[#ffbd00]">o</span><span class="inline w-fit text-[#0086f8]">g</span><span class="inline w-fit text-[#00aa4c]">l</span><span class="inline w-fit text-[#ff4131]">e</span>
         </div>
         <div
-          class="border-2 border-gray-200 w-[30%] h-12 rounded-full overflow-hidden px-6 hover:shadow-md hover:border-2 transition-all ease-linear"
+          class="flex justify-between items-center  border-2 border-gray-200 w-[30%] h-12 rounded-full overflow-hidden pr-6 pl-3 hover:shadow-md hover:border-2 transition-all ease-linear"
         >
+          <span class="material-symbols-outlined">
+            search
+          </span>
           <input
             type="text"
             name="search"
-            class="w-full h-full border-none outline-none text-sm bg-transparent"
+            class="w-full h-full border-none outline-none text-sm p-2"
             onclick="document.getElementsByName('Beat/Sta')[0].value='B01'"
+            required
           />
         </div>
 
@@ -46,5 +51,8 @@
         </div>
       </div>
     </form>
+    <script>
+
+    </script>
   </body>
 </html>
